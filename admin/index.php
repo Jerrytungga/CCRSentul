@@ -214,37 +214,23 @@ borders: top right bottom left !important
                     </colgroup>
                     <thead class="u-palette-4-base u-table-header u-table-header-2">
                       <tr style="height: 21px;">
-                        <th class="u-border-1 u-border-palette-4-base u-table-cell">Column 1 </th>
-                        <th class="u-border-1 u-border-palette-4-base u-table-cell">Column 2 </th>
-                        <th class="u-border-1 u-border-palette-4-base u-table-cell">Column 3 </th>
-                        <th class="u-border-1 u-border-palette-4-base u-table-cell">Column 4 </th>
+                        <th class="u-border-1 u-border-palette-4-base u-table-cell">No </th>
+                        <th class="u-border-1 u-border-palette-4-base u-table-cell">Nama Hall </th>
+                        <th class="u-border-1 u-border-palette-4-base u-table-cell">LINK</th>
                       </tr>
                     </thead>
                     <tbody class="u-table-body">
+                    <?php $i = 1; ?>
+                    <?php foreach ($link_ccr as $row) : ?>
                       <tr style="height: 75px;">
-                        <td class="u-border-1 u-border-grey-30 u-first-column u-grey-5 u-table-cell u-table-cell-25">Row 1</td>
-                        <td class="u-border-1 u-border-grey-30 u-table-cell">Description</td>
-                        <td class="u-border-1 u-border-grey-30 u-table-cell">Description</td>
-                        <td class="u-border-1 u-border-grey-30 u-table-cell">Description</td>
+                        <td class="u-border-1 u-border-grey-30 u-first-column u-grey-5 u-table-cell u-table-cell-25"><?= $i?></td>
+                        <td class="u-border-1 u-border-grey-30 u-table-cell"><?= $row['nama_btn']?></td>
+                        <td class="u-border-1 u-border-grey-30 u-table-cell"><a href="<?= $row['link']?>"><?= $row['link']?></a></td>
+                      
                       </tr>
-                      <tr style="height: 76px;">
-                        <td class="u-border-1 u-border-grey-30 u-first-column u-grey-5 u-table-cell u-table-cell-29">Row 2</td>
-                        <td class="u-border-1 u-border-grey-30 u-table-cell">Description</td>
-                        <td class="u-border-1 u-border-grey-30 u-table-cell">Description</td>
-                        <td class="u-border-1 u-border-grey-30 u-table-cell">Description</td>
-                      </tr>
-                      <tr style="height: 76px;">
-                        <td class="u-border-1 u-border-grey-30 u-first-column u-grey-5 u-table-cell u-table-cell-33">Row 3</td>
-                        <td class="u-border-1 u-border-grey-30 u-table-cell">Description</td>
-                        <td class="u-border-1 u-border-grey-30 u-table-cell">Description</td>
-                        <td class="u-border-1 u-border-grey-30 u-table-cell">Description</td>
-                      </tr>
-                      <tr style="height: 76px;">
-                        <td class="u-border-1 u-border-grey-30 u-first-column u-grey-5 u-table-cell u-table-cell-37">Row 4</td>
-                        <td class="u-border-1 u-border-grey-30 u-table-cell">Description</td>
-                        <td class="u-border-1 u-border-grey-30 u-table-cell">Description</td>
-                        <td class="u-border-1 u-border-grey-30 u-table-cell">Description</td>
-                      </tr>
+                    
+                      <?php $i++; ?>
+                    <?php endforeach; ?>
                     </tbody>
                   </table>
 
