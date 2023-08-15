@@ -1,40 +1,75 @@
 <?php
 include 'database.php';
-$gambar_utama = mysqli_query($conn, "SELECT * FROM gambar_utama ");
-$data = mysqli_fetch_array($gambar_utama);
 $gambar_kedua = mysqli_query($conn, "SELECT * FROM gambar_kedua ");
 $data2 = mysqli_fetch_array($gambar_kedua);
+$periode = mysqli_query($conn, "SELECT * FROM `periode`");
+$periode_ = mysqli_fetch_array($periode);
+$bible = mysqli_query($conn, "SELECT * FROM `ayat_alkitab`");
+$ayat = mysqli_fetch_array($bible);
 ?>
 <!DOCTYPE html>
-<html style="font-size: 16px;" lang="en">
-<?php include 'head.php'; ?>
-<body data-home-page="HOME.html" data-home-page-title="HOME" class="u-body u-overlap u-overlap-contrast u-xl-mode" data-lang="en">
-  
-  <header class="u-clearfix u-gradient u-header u-header" id="sec-8d2a"><div class="u-clearfix u-sheet u-sheet-1">
-<?php include 'navbar.php'; ?>
-        
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>CCR</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand" href="#page-top"><h6>CAMPUS & COMMUNITY RESEARCH</h6></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars ms-1"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://docs.google.com/forms/d/e/1FAIpQLSdpYzzp8yybq1gJvNlJfADSjqvyzcmk9yS5BS5STwEjs6Q_gA/viewform?pli=1">Daftar Domba</a></li>
+                        <li class="nav-item"><a class="nav-link" href="jurnal.php">LInk Jurnal</a></li>
+                        <!-- <li class="nav-item"><a class="nav-link" href="">Jurnal Fieldtrip</a></li> -->
+                        <li class="nav-item"><a class="nav-link" href="https://euaggelion.my.canva.site/rekomendasi-bahan-perlusan">Bahan Injil & Rawat</a></li>
+                        <li class="nav-item"><a class="btn btn-danger" href="login/index.php">Login</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Masthead-->
+        <header class="masthead" style="background-image: url('admin/images/<?= $data2['Nama_gambar2']?>');" >
+            <div class="container">
+                <h5 ><?= $periode_['semester'] ?></h5> <br>
+                <h1 class=" text-uppercase">JURNAL PERLUASAN</h1><br><br>
+                <h6><?= $ayat['ayat'] ?></h6> <br><br>
+                <a class="btn btn-primary btn-xl text-uppercase" href="https://docs.google.com/spreadsheets/d/1a6lcz5G6xbUAURVpmbSxopvEogS2en3jKQhPGttpSS4/edit#gid=0">BUKU GOW</a> <br><br>
+                <h6>"AVAILABLE, BURDEN, AND COMMITMEN​T"</h6> <br><br>
+            </div>
+        </header>
+        <!-- Services-->
+    
+
+                    
+     
        
-
-</header>
-    <section class="u-align-center u-clearfix u-image u-parallax u-shading u-section-1"  style="background-image: url('admin/images/<?= $data2['Nama_gambar2']?>');" id="sec-1a1f" data-image-width="3008" data-image-height="2000">
-      <div class="u-clearfix u-sheet u-sheet-1">
-        <h4 class="u-custom-font u-font-merriweather u-text u-text-1">JUL - DES 2023</h4>
-        <h3 class="u-custom-font u-font-merriweather u-text u-text-2">JURNAL <span style="font-weight: 700; font-style: italic;">CCR</span> SENTUL
-        </h3>
-        <h3 class="u-custom-font u-font-merriweather u-text u-text-3"> Exodus 7:16 Let My people go that they may serve Me</h3>
-        <div class="u-border-3 u-border-palette-3-base u-expanded-width-xs u-line u-line-horizontal u-line-1"></div>
-        <h3 class="u-custom-font u-font-merriweather u-text u-text-4"> Materials</h3>
-        <a href="https://docs.google.com/spreadsheets/d/1a6lcz5G6xbUAURVpmbSxopvEogS2en3jKQhPGttpSS4/edit#gid=0" class="u-border-2 u-border-hover-white u-border-palette-3-base u-btn u-btn-round u-button-style u-hover-palette-3-base u-none u-radius-6 u-text-body-alt-color u-text-hover-white u-btn-1" data-animation-name="customAnimationIn" data-animation-duration="1000">BUKU GOW</a>
-        <h3 class="u-custom-font u-font-merriweather u-text u-text-5"> "AVAILABLE, BURDEN, AND COMMITMEN​T"</h3>
-      </div>
-    </section>
-
-
-    <style class="u-overlap-style">.u-overlap:not(.u-sticky-scroll) .u-header {
-background-color: #4d4d4d !important; transparency: 10 !important
-}</style>
-    
-    
-  
-  
-</body></html>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    </body>
+</html>

@@ -53,7 +53,7 @@ $data2 = mysqli_fetch_array($gambar_kedua);
 		<div class="container-login100" style="background-image: url('../admin/images/<?= $data2['Nama_gambar2']?>');">
 			<div class="wrap-login100 p-t-30 p-b-50">
 				<span class="login100-form-title p-b-41">
-					CCR Login
+				CAMPUS & COMMUNITY RESEARCH
 				</span>
 				<form action="" method="post">
 					<div class="m-2">
